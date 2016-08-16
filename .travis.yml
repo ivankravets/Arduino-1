@@ -6,7 +6,7 @@ python:
 sudo: false
 cache:
     directories:
-        - "~/.platformio"
+        - ~/.platformio
 
 env:
     - PLATFORMIO_CI_SRC=examples/AirQualitySensor
@@ -54,5 +54,4 @@ install:
     #- platformio lib --global install DigitalIO
 
 script:
-    -
     - if [[ $PLATFORMIO_CI_BOARDS_ARGS ]]; then bash -c 'platformio ci --lib="." $PLATFORMIO_CI_BOARDS_ARGS'; else platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board zero; fi
