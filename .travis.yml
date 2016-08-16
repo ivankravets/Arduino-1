@@ -9,20 +9,6 @@ cache:
         - "~/.platformio"
 
 env:
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinBlink/DigitalPinBlink.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinConfigToggle/DigitalPinConfigToggle.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinReadWrite/DigitalPinReadWrite.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinShiftOut/DigitalPinShiftOut.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/PinIOBegin/PinIOBegin.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/PinIOConfigToggle/PinIOConfigToggle.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/PinIOReadWrite/PinIOReadWrite.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/ScanI2cBus/ScanI2cBus.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/SoftDS1307Utility/SoftDS1307Utility.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testArduino/testArduino.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testDigitalPin/testDigitalPin.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testFastDigital/testFastDigital.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testPinIO/testPinIO.ino
-    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testSoftSPI/testSoftSPI.ino
     - PLATFORMIO_CI_SRC=examples/AirQualitySensor/AirQualitySensor.ino
     - PLATFORMIO_CI_SRC=examples/BatteryPoweredSensor/BatteryPoweredSensor.ino
     - PLATFORMIO_CI_SRC=examples/BinarySwitchSleepSensor/BinarySwitchSleepSensor.ino
@@ -65,7 +51,7 @@ install:
     - platformio update
 
     # install required libraries
-    - platformio lib --global install DigitalIO
+    #- platformio lib --global install DigitalIO
 
 script:
     - platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board due --board zero
