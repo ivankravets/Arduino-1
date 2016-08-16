@@ -19,9 +19,9 @@ env:
     - PLATFORMIO_CI_SRC=examples/DustSensor
     - PLATFORMIO_CI_SRC=examples/DustSensorDSM
     - PLATFORMIO_CI_SRC=examples/EnergyMeterPulseSensor
-    - PLATFORMIO_CI_SRC=examples/GatewayESP8266
-    - PLATFORMIO_CI_SRC=examples/GatewayESP8266MQTTClient
-    - PLATFORMIO_CI_SRC=examples/GatewayESP8266OTA
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266 PLATFORMIO_CI_BOARDS_ARGS="--board esp01 --board nodemcuv2"
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266MQTTClient PLATFORMIO_CI_BOARDS_ARGS="--board esp01 --board nodemcuv2"
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266OTA PLATFORMIO_CI_BOARDS_ARGS="--board esp01 --board nodemcuv2"
     - PLATFORMIO_CI_SRC=examples/GatewaySerial
     - PLATFORMIO_CI_SRC=examples/GatewaySerialRS485
     - PLATFORMIO_CI_SRC=examples/GatewayW5100
@@ -54,4 +54,5 @@ install:
     #- platformio lib --global install DigitalIO
 
 script:
-    - platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board zero
+    -
+    - if [[ $PLATFORMIO_CI_BOARDS_ARGS ]]; then bash -c 'platformio ci --lib="." $PLATFORMIO_CI_BOARDS_ARGS'; else platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board zero; fi
