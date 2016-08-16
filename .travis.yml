@@ -1,0 +1,68 @@
+language: python
+python:
+    - "2.7"
+
+# Cache PlatformIO packages using Travis CI container-based infrastructure
+sudo: false
+cache:
+    directories:
+        - "~/.platformio"
+
+env:
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinBlink/DigitalPinBlink.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinConfigToggle/DigitalPinConfigToggle.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinReadWrite/DigitalPinReadWrite.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/DigitalPinShiftOut/DigitalPinShiftOut.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/PinIOBegin/PinIOBegin.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/PinIOConfigToggle/PinIOConfigToggle.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/PinIOReadWrite/PinIOReadWrite.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/ScanI2cBus/ScanI2cBus.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/SoftDS1307Utility/SoftDS1307Utility.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testArduino/testArduino.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testDigitalPin/testDigitalPin.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testFastDigital/testFastDigital.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testPinIO/testPinIO.ino
+    - PLATFORMIO_CI_SRC=drivers/AVR/DigitalIO/examples/testSoftSPI/testSoftSPI.ino
+    - PLATFORMIO_CI_SRC=examples/AirQualitySensor/AirQualitySensor.ino
+    - PLATFORMIO_CI_SRC=examples/BatteryPoweredSensor/BatteryPoweredSensor.ino
+    - PLATFORMIO_CI_SRC=examples/BinarySwitchSleepSensor/BinarySwitchSleepSensor.ino
+    - PLATFORMIO_CI_SRC=examples/ClearEepromConfig/ClearEepromConfig.ino
+    - PLATFORMIO_CI_SRC=examples/CO2Sensor/CO2Sensor.ino
+    - PLATFORMIO_CI_SRC=examples/DimmableLEDActuator/DimmableLEDActuator.ino
+    - PLATFORMIO_CI_SRC=examples/DimmableLight/DimmableLight.ino
+    - PLATFORMIO_CI_SRC=examples/DustSensor/DustSensor.ino
+    - PLATFORMIO_CI_SRC=examples/DustSensorDSM/DustSensorDSM.ino
+    - PLATFORMIO_CI_SRC=examples/EnergyMeterPulseSensor/EnergyMeterPulseSensor.ino
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266/GatewayESP8266.ino
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266MQTTClient/GatewayESP8266MQTTClient.ino
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266OTA/GatewayESP8266OTA.ino
+    - PLATFORMIO_CI_SRC=examples/GatewaySerial/GatewaySerial.ino
+    - PLATFORMIO_CI_SRC=examples/GatewaySerialRS485/GatewaySerialRS485.ino
+    - PLATFORMIO_CI_SRC=examples/GatewayW5100/GatewayW5100.ino
+    - PLATFORMIO_CI_SRC=examples/GatewayW5100MQTTClient/GatewayW5100MQTTClient.ino
+    - PLATFORMIO_CI_SRC=examples/LightSensor/LightSensor.ino
+    - PLATFORMIO_CI_SRC=examples/MockMySensors/MockMySensors.ino
+    - PLATFORMIO_CI_SRC=examples/MotionSensor/MotionSensor.ino
+    - PLATFORMIO_CI_SRC=examples/MotionSensorRS485/MotionSensorRS485.ino
+    - PLATFORMIO_CI_SRC=examples/PHSensor/PHSensor.ino
+    - PLATFORMIO_CI_SRC=examples/PingPongSensor/PingPongSensor.ino
+    - PLATFORMIO_CI_SRC=examples/RelayActuator/RelayActuator.ino
+    - PLATFORMIO_CI_SRC=examples/RepeaterNode/RepeaterNode.ino
+    - PLATFORMIO_CI_SRC=examples/SecretKnockSensor/SecretKnockSensor.ino
+    - PLATFORMIO_CI_SRC=examples/SecureActuator/SecureActuator.ino
+    - PLATFORMIO_CI_SRC=examples/SecurityPersonalizer/SecurityPersonalizer.ino
+    - PLATFORMIO_CI_SRC=examples/SoilMoistSensor/SoilMoistSensor.ino
+    - PLATFORMIO_CI_SRC=examples/UVSensor/UVSensor.ino
+    - PLATFORMIO_CI_SRC=examples/VibrationSensor/VibrationSensor.ino
+    - PLATFORMIO_CI_SRC=examples/WaterMeterPulseSensor/WaterMeterPulseSensor.ino
+
+install:
+    # Don't forget to switch to stable PlatformIO 3.0 (line below) when it will be released
+    - pip install -U https://github.com/platformio/platformio/archive/develop.zip
+    # - pip install -U platformio
+
+    # update cached development platforms, packages and libraries
+    - platformio update
+
+script:
+    - platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board due --board zero
