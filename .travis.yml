@@ -65,7 +65,7 @@ install:
     - platformio update
 
     # install required libraries
-    - platformio lib ---global install DigitalIO
+    - platformio lib --global install DigitalIO
 
 script:
     - platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board due --board zero
