@@ -46,8 +46,6 @@ install:
     # Don't forget to switch to stable PlatformIO 3.0 (line below) when it will be released
     # - pip install -U platformio
     - pip install -U https://github.com/platformio/platformio/archive/develop.zip
-    # Update cached development platforms, packages and libraries
-    - platformio update
 
 script:
     - if [[ $PLATFORMIO_CI_BOARDS_ARGS ]]; then bash -c 'platformio ci --lib="." $PLATFORMIO_CI_BOARDS_ARGS'; else platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board zero; fi
