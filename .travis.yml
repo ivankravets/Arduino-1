@@ -9,38 +9,38 @@ cache:
         - "~/.platformio"
 
 env:
-    - PLATFORMIO_CI_SRC=examples/AirQualitySensor/AirQualitySensor.ino
-    - PLATFORMIO_CI_SRC=examples/BatteryPoweredSensor/BatteryPoweredSensor.ino
-    - PLATFORMIO_CI_SRC=examples/BinarySwitchSleepSensor/BinarySwitchSleepSensor.ino
-    - PLATFORMIO_CI_SRC=examples/ClearEepromConfig/ClearEepromConfig.ino
-    - PLATFORMIO_CI_SRC=examples/CO2Sensor/CO2Sensor.ino
-    - PLATFORMIO_CI_SRC=examples/DimmableLEDActuator/DimmableLEDActuator.ino
-    - PLATFORMIO_CI_SRC=examples/DimmableLight/DimmableLight.ino
-    - PLATFORMIO_CI_SRC=examples/DustSensor/DustSensor.ino
-    - PLATFORMIO_CI_SRC=examples/DustSensorDSM/DustSensorDSM.ino
-    - PLATFORMIO_CI_SRC=examples/EnergyMeterPulseSensor/EnergyMeterPulseSensor.ino
-    - PLATFORMIO_CI_SRC=examples/GatewayESP8266/GatewayESP8266.ino
-    - PLATFORMIO_CI_SRC=examples/GatewayESP8266MQTTClient/GatewayESP8266MQTTClient.ino
-    - PLATFORMIO_CI_SRC=examples/GatewayESP8266OTA/GatewayESP8266OTA.ino
-    - PLATFORMIO_CI_SRC=examples/GatewaySerial/GatewaySerial.ino
-    - PLATFORMIO_CI_SRC=examples/GatewaySerialRS485/GatewaySerialRS485.ino
-    - PLATFORMIO_CI_SRC=examples/GatewayW5100/GatewayW5100.ino
-    - PLATFORMIO_CI_SRC=examples/GatewayW5100MQTTClient/GatewayW5100MQTTClient.ino
-    - PLATFORMIO_CI_SRC=examples/LightSensor/LightSensor.ino
-    - PLATFORMIO_CI_SRC=examples/MockMySensors/MockMySensors.ino
-    - PLATFORMIO_CI_SRC=examples/MotionSensor/MotionSensor.ino
-    - PLATFORMIO_CI_SRC=examples/MotionSensorRS485/MotionSensorRS485.ino
-    - PLATFORMIO_CI_SRC=examples/PHSensor/PHSensor.ino
-    - PLATFORMIO_CI_SRC=examples/PingPongSensor/PingPongSensor.ino
-    - PLATFORMIO_CI_SRC=examples/RelayActuator/RelayActuator.ino
-    - PLATFORMIO_CI_SRC=examples/RepeaterNode/RepeaterNode.ino
-    - PLATFORMIO_CI_SRC=examples/SecretKnockSensor/SecretKnockSensor.ino
-    - PLATFORMIO_CI_SRC=examples/SecureActuator/SecureActuator.ino
-    - PLATFORMIO_CI_SRC=examples/SecurityPersonalizer/SecurityPersonalizer.ino
-    - PLATFORMIO_CI_SRC=examples/SoilMoistSensor/SoilMoistSensor.ino
-    - PLATFORMIO_CI_SRC=examples/UVSensor/UVSensor.ino
-    - PLATFORMIO_CI_SRC=examples/VibrationSensor/VibrationSensor.ino
-    - PLATFORMIO_CI_SRC=examples/WaterMeterPulseSensor/WaterMeterPulseSensor.ino
+    - PLATFORMIO_CI_SRC=examples/AirQualitySensor
+    - PLATFORMIO_CI_SRC=examples/BatteryPoweredSensor
+    - PLATFORMIO_CI_SRC=examples/BinarySwitchSleepSensor
+    - PLATFORMIO_CI_SRC=examples/ClearEepromConfig
+    - PLATFORMIO_CI_SRC=examples/CO2Sensor
+    - PLATFORMIO_CI_SRC=examples/DimmableLEDActuator
+    - PLATFORMIO_CI_SRC=examples/DimmableLight
+    - PLATFORMIO_CI_SRC=examples/DustSensor
+    - PLATFORMIO_CI_SRC=examples/DustSensorDSM
+    - PLATFORMIO_CI_SRC=examples/EnergyMeterPulseSensor
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266MQTTClient
+    - PLATFORMIO_CI_SRC=examples/GatewayESP8266OTA
+    - PLATFORMIO_CI_SRC=examples/GatewaySerial
+    - PLATFORMIO_CI_SRC=examples/GatewaySerialRS485
+    - PLATFORMIO_CI_SRC=examples/GatewayW5100
+    - PLATFORMIO_CI_SRC=examples/GatewayW5100MQTTClient
+    - PLATFORMIO_CI_SRC=examples/LightSensor
+    - PLATFORMIO_CI_SRC=examples/MockMySensors
+    - PLATFORMIO_CI_SRC=examples/MotionSensor
+    - PLATFORMIO_CI_SRC=examples/MotionSensorRS485
+    - PLATFORMIO_CI_SRC=examples/PHSensor
+    - PLATFORMIO_CI_SRC=examples/PingPongSensor
+    - PLATFORMIO_CI_SRC=examples/RelayActuator
+    - PLATFORMIO_CI_SRC=examples/RepeaterNode
+    - PLATFORMIO_CI_SRC=examples/SecretKnockSensor
+    - PLATFORMIO_CI_SRC=examples/SecureActuator
+    - PLATFORMIO_CI_SRC=examples/SecurityPersonalizer
+    - PLATFORMIO_CI_SRC=examples/SoilMoistSensor
+    - PLATFORMIO_CI_SRC=examples/UVSensor
+    - PLATFORMIO_CI_SRC=examples/VibrationSensor
+    - PLATFORMIO_CI_SRC=examples/WaterMeterPulseSensor
 
 install:
     # Don't forget to switch to stable PlatformIO 3.0 (line below) when it will be released
@@ -54,4 +54,4 @@ install:
     #- platformio lib --global install DigitalIO
 
 script:
-    - platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board due --board zero
+    - platformio ci  --lib="." --board uno --board megaatmega2560 --board esp01 --board nodemcuv2 --board zero
